@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import { db } from '@/services/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { submitFeedback } from '@/services/mysql';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,11 +25,8 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Add the form data to the 'feedback' collection in Firestore
-      await addDoc(collection(db, 'feedback'), {
-        ...formData,
-        timestamp: serverTimestamp()
-      });
+      // Submit form data to MySQL via API
+      await submitFeedback(formData);
       
       // Show success message
       toast({
