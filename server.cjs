@@ -48,7 +48,7 @@ db.connect(err => {
 });
 
 // Route to handle form submissions
-app.post('/api/feedback', (req, res) => {
+app.post('/api/railway', (req, res) => {
   const { name, email, subject, message } = req.body;
   
   if (!name || !email || !subject || !message) {
@@ -67,7 +67,7 @@ app.post('/api/feedback', (req, res) => {
 });
 
 // Route to get all messages
-app.get('/api/feedback', (req, res) => {
+app.get('/api/railway', (req, res) => {
   db.query('SELECT * FROM messages ORDER BY created_at DESC', (err, results) => {
     if (err) {
       console.error('Error fetching messages:', err);

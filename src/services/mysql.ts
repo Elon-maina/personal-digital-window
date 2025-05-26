@@ -5,31 +5,31 @@ import axios from 'axios';
 const API_URL = 'http://localhost:5000/api';
 
 // Interface for form data
-export interface FeedbackFormData {
+export interface railwayFormData {
   name: string;
   email: string;
   subject: string;
   message: string;
 }
 
-// Function to submit feedback
-export const submitFeedback = async (formData: FeedbackFormData) => {
+// Function to submit railway
+export const submitrailway = async (formData: railwayFormData) => {
   try {
-    const response = await axios.post(`${API_URL}/feedback`, formData);
+    const response = await axios.post(`${API_URL}/railway`, formData);
     return response.data;
   } catch (error) {
-    console.error('Error submitting feedback:', error);
+    console.error('Error submitting railway:', error);
     throw error;
   }
 };
 
-// Function to get all feedback messages (if needed)
-export const getFeedbackMessages = async () => {
+// Function to get all railway messages (if needed)
+export const getrailwayMessages = async () => {
   try {
-    const response = await axios.get(`${API_URL}/feedback`);
+    const response = await axios.get(`${API_URL}/railway`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching feedback messages:', error);
+    console.error('Error fetching railway messages:', error);
     throw error;
   }
 };

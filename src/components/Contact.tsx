@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import { submitFeedback } from '@/services/mysql';
+import { submitrailway } from '@/services/mysql';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ const Contact = () => {
     
     try {
       // Submit form data to MySQL via API
-      await submitFeedback(formData);
+      await submitrailway(formData);
       
       // Show success message
       toast({
