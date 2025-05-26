@@ -12,10 +12,10 @@ app.use(express.json());
 
 // Create MySQL connection
 const db = mysql.createConnection({
-  host: process.env.DB_HOST || 'localhost',
+  host: process.env.DB_HOST || 'mysql-sfn5.railway.internal',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '@$1A2b3c4d',
-  database: 'feedback'
+  password: process.env.DB_PASSWORD || 'rAUjZBLADTiksNvEEspQaMJgYuAcmzaz',
+  database: 'railway'
 });
 
 // Connect to MySQL
