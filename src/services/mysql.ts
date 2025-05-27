@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Base URL for API
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'mysql://root:rAUjZBLADTiksNvEEspQaMJgYuAcmzaz@mysql-sfn5.railway.internal:3306/railway';
 
 // Interface for form data
 export interface railwayFormData {
